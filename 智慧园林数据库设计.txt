@@ -1,0 +1,41 @@
+表名：disease
+id int(11) primary-key 主键
+plant_id int(11) 植物id
+disease_name varchar(511) 病虫害名称
+disease_part varchar(511) 发病部位
+disease_period varchar(511) 发病时期
+disease_type int(11) 0->病害 1->虫害
+disease_properties_rel varchar(255) 性状、疾病对应关系，不同id以#隔开
+disease_description varchar(2047) 概述
+disease_symptom varchar(2047) 症状
+disease_character varchar(2047) 形态特征
+disease_law varchar(2047) 规律
+disease_prevention varchar(2047) 防治技术
+disease_image varchar(2047) 图片，多个图片路径以#隔开
+disease_create_time int(11) 创建时间 default = 0
+disease_update_time int(11) 更新时间 default = 0
+disease_delete_time int(11) 删除时间 default = 0
+
+表名：disease_property
+id int(11) primary-key 主键
+plant_id int(11) 植物id
+prperty_title varchar(2047) 性状名称
+property_description varchar(2047) 性状描述
+property_image varchar(2047) 图片，多个图片路径以#隔开
+property_sequence varchar(2047) 第几题
+property_create_time int(11) 创建时间 default = 0
+property_update_time int(11) 更新时间 default = 0
+property_delete_time int(11) 删除时间 default = 0
+
+表名：plant
+id int(11) primary-key 主键
+plant_name varchar(511) 植物名称
+plant_create_time int(11) 创建时间 default = 0
+plant_update_time int(11) 更新时间 default = 0
+plant_delete_time int(11) 删除时间 default = 0
+
+表名：plant_search
+id int(11) primary-key 主键
+search_type int(11) 0->查询植物 1->查询病虫害
+search_name varchar(2047) 查询内容
+search_time int(11) default 1 查询次数
